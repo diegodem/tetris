@@ -45,6 +45,15 @@ private:
 
 	int untilNextLevel;
 
+	int score;
+	int level;
+
+	int scoreByLines[4] = { 40, 100, 300, 1200 };
+
+	sf::Text hud;
+
+	sf::Font font;
+
 	// Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);

@@ -158,7 +158,6 @@
   <ItemGroup>
     <ClCompile Include="Alpha.cpp" />
     <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Bob.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Gamma.cpp" />
@@ -176,7 +175,6 @@
   <ItemGroup>
     <ClInclude Include="Alpha.h" />
     <ClInclude Include="Board.h" />
-    <ClInclude Include="Bob.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Gamma.h" />
     <ClInclude Include="Line.h" />

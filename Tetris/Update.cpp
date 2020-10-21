@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "Engine.h"
+#include <sstream>
+#include <iomanip>
+#include <iostream>
 
 
 using namespace sf;
@@ -109,14 +112,19 @@ void Engine::update(float dtAsSeconds)
 			case 6:
 				m_Piece = Zaw();
 			}
-
-			if (int n = m_Board.checkLines() > 0) {
+			int numLines = m_Board.checkLines();
+			if (numLines > 0) {
 				linesBeingCleared = true;
 				lineCounter = 0;
-				untilNextLevel -= n;
+				untilNextLevel -= numLines;
+				score += scoreByLines[numLines - 1] * level;
+				std::stringstream ss;
+				ss << "Score\n" << std::setfill('0') << std::setw(5) << score;
+				hud.setString(ss.str());
 				if (untilNextLevel <= 0) {
 					pieceFreq = pieceFreq * 0.6;
 					untilNextLevel += 10;
+					level++;
 				}
 			}
 		}

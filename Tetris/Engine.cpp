@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Engine.h"
 #include <time.h>
+#include <sstream>
+#include <iomanip>
+#include <iostream>
 
 Engine::Engine()
 {
@@ -34,6 +37,21 @@ Engine::Engine()
 	pieceFreq = 0.75;
 
 	untilNextLevel = 10;
+
+	score = 0;
+	level = 1;
+
+	hud.setPosition(975, 25);
+	font.loadFromFile("font.ttf");
+	hud.setFont(font);
+	hud.setCharacterSize(50);
+
+	hud.setFillColor(sf::Color::White);
+
+	std::stringstream ss;
+	ss << "Score\n" << std::setfill('0') << std::setw(5) << score;
+	hud.setString(ss.str());
+
 
 }
 

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Engine.h"
 
+
 void Engine::draw()
 {
 	// Rub out the last frame
@@ -33,6 +34,8 @@ void Engine::draw()
 			m_Window.draw(lineCleared);
 		}
 	}
+
+	m_Window.draw(hud);
 
 	// Show everything we have just drawn
 	m_Window.display();
