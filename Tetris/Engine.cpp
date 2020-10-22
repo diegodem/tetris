@@ -17,8 +17,7 @@ Engine::Engine()
 	// Load the background into the texture
 	// Be sure to scale this image to your screen size
 
-	// Associate the sprite with the texture
-	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	// Associate th
 
 	rectangle.setOutlineThickness(12.f);
 	rectangle.setOutlineColor(sf::Color(237, 201, 136));
@@ -26,15 +25,20 @@ Engine::Engine()
 	rectangle.setPosition(390, 12);
 	rectangle.setSize(sf::Vector2f(500, 1000));
 
+	m_BackgroundTexture.loadFromFile("background.png");
+	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	m_BackgroundSprite.setPosition(390, 12);
+
 	sampleRect = sf::RectangleShape(sf::Vector2f(50, 50));
 	sampleRect.setFillColor(sf::Color(190, 87, 111));
 	//sampleRect.setOutlineThickness(1.f);
 	//sampleRect.setOutlineColor(sf::Color(19, 39, 67));
 
-	backgroundRect = sf::RectangleShape(sf::Vector2f(50, 50));
+	/*backgroundRect = sf::RectangleShape(sf::Vector2f(50, 50));
 	backgroundRect.setOutlineThickness(1);
 	backgroundRect.setOutlineColor(sf::Color(237, 201, 136));
-	backgroundRect.setFillColor(sf::Color(248, 239, 212));
+	backgroundRect.setFillColor(sf::Color(248, 239, 212));*/
+	
 
 	lineCleared = sf::RectangleShape(sf::Vector2f(500, 50));
 	lineCleared.setFillColor(sf::Color::White);

@@ -10,6 +10,8 @@ void Engine::draw()
 	// Draw the background
 	m_Window.draw(rectangle);
 
+	m_Window.draw(m_BackgroundSprite);
+
 
 	
 	
@@ -19,10 +21,10 @@ void Engine::draw()
 				sampleRect.setPosition(390 + i * 50, 12 + j * 50);
 				m_Window.draw(sampleRect);
 			}
-			else {
+			/*else {
 				backgroundRect.setPosition(390 + i * 50, 12 + j * 50);
 				m_Window.draw(backgroundRect);
-			}
+			}*/
 		}
 	}
 	std::array<Chip, 4> chips = m_Piece.getChips();
