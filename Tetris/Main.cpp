@@ -7,7 +7,7 @@ int main()
 	Engine engine;
 
 	// Start the engine
-	engine.start();
+	engine.start("Play");
 
 	// Quit in the usual way when the engine is stopped
 	return 0;

@@ -160,12 +160,14 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gamma.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Chip.cpp" />
+    <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="Saw.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="Triangle.cpp" />

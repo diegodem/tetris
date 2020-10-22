@@ -2,7 +2,6 @@
 #include "Board.h"
 
 Board::Board() {
-	squares.fill({});
 }
 
 bool Board::isFilledSquare(int x, int y) {
@@ -61,4 +60,8 @@ void Board::removeClearedLines() {
 	
 	}
 	clearedLines.clear();
+}
+
+void Board::clear() {
+	squares.fill({});
 }

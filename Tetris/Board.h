@@ -14,4 +14,5 @@ public:
 	void fillSquare(int x, int y);
 	std::vector<int> linesBeingCleared();
 	void removeClearedLines();
+	void clear();
 };

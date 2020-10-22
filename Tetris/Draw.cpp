@@ -8,15 +8,10 @@ void Engine::draw()
 	m_Window.clear(sf::Color(19,39,67));
 
 	// Draw the background
-	/*m_Window.draw(m_BackgroundSprite);
-	m_Window.draw(m_Bob.getSprite());*/
 	m_Window.draw(rectangle);
 
 
-	std::array<Chip, 4> chips = m_Piece.getChips();
-	for (int i = 0; i < 4; i++) {
-		m_Window.draw(chips[i]);
-	}
+	
 	
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 20; j++) {
@@ -24,7 +19,15 @@ void Engine::draw()
 				sampleRect.setPosition(390 + i * 50, 12 + j * 50);
 				m_Window.draw(sampleRect);
 			}
+			else {
+				backgroundRect.setPosition(390 + i * 50, 12 + j * 50);
+				m_Window.draw(backgroundRect);
+			}
 		}
+	}
+	std::array<Chip, 4> chips = m_Piece.getChips();
+	for (int i = 0; i < 4; i++) {
+		m_Window.draw(chips[i]);
 	}
 
 	if (linesBeingCleared) {

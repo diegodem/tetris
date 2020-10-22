@@ -29,6 +29,7 @@ private:
 
 	sf::RectangleShape rectangle;
 	sf::RectangleShape sampleRect;
+	sf::RectangleShape backgroundRect;
 	sf::RectangleShape lineCleared;
 
 	sf::Event event;
@@ -51,19 +52,26 @@ private:
 	int scoreByLines[4] = { 40, 100, 300, 1200 };
 
 	sf::Text hud;
+	sf::Text hudGameOver;
 
 	sf::Font font;
 
+	bool gameIsOver;
+	bool startPlaying;
+
 	// Private functions for internal use only
+	void playState();
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
+	void gameOverState();
+
 
 public:
 	// The Engine constructor
 	Engine();
 
 	// start will call all the private functions
-	void start();
+	void start(std::string state);
 
 };

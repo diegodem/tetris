@@ -28,6 +28,13 @@ Engine::Engine()
 
 	sampleRect = sf::RectangleShape(sf::Vector2f(50, 50));
 	sampleRect.setFillColor(sf::Color(190, 87, 111));
+	//sampleRect.setOutlineThickness(1.f);
+	//sampleRect.setOutlineColor(sf::Color(19, 39, 67));
+
+	backgroundRect = sf::RectangleShape(sf::Vector2f(50, 50));
+	backgroundRect.setOutlineThickness(1);
+	backgroundRect.setOutlineColor(sf::Color(237, 201, 136));
+	backgroundRect.setFillColor(sf::Color(248, 239, 212));
 
 	lineCleared = sf::RectangleShape(sf::Vector2f(500, 50));
 	lineCleared.setFillColor(sf::Color::White);
@@ -38,8 +45,6 @@ Engine::Engine()
 
 	untilNextLevel = 10;
 
-	score = 0;
-	level = 1;
 
 	hud.setPosition(975, 25);
 	font.loadFromFile("font.ttf");
@@ -52,51 +57,25 @@ Engine::Engine()
 	ss << "Score\n" << std::setfill('0') << std::setw(5) << score;
 	hud.setString(ss.str());
 
+	hudGameOver.setPosition(220, 350);
+	hudGameOver.setFont(font);
+	hudGameOver.setCharacterSize(100);
+	hudGameOver.setFillColor(sf::Color::White);
+	std::stringstream ssGameOver;
+	ssGameOver << "Game Over";
+	hudGameOver.setString(ssGameOver.str());
+
 
 }
 
-void Engine::start()
+void Engine::start(std::string state)
 {
-	// Timing
-	sf::Clock clock;
 
-	srand(time(NULL));
-
-	switch (rand() % 7) {
-	case 0:
-		m_Piece = Line();
-		break;
-	case 1:
-		m_Piece = Gamma();
-		break;
-	case 2:
-		m_Piece = Alpha();
-		break;
-	case 3:
-		m_Piece = Square();
-		break;
-	case 4:
-		m_Piece = Saw();
-		break;
-	case 5:
-		m_Piece = Triangle();
-		break;
-	case 6:
-		m_Piece = Zaw();
+	if (state == "Play") {
+		playState();
 	}
-
+	else if (state == "Game Over") {
+		gameOverState();
+	}
 	
-
-	while (m_Window.isOpen())
-	{
-		// Restart the clock and save the elapsed time into dt
-		sf::Time dt = clock.restart();
-
-		// Make a fraction from the delta time
-		float dtAsSeconds = dt.asSeconds();
-
-		input();
-		update(dtAsSeconds);
-		draw();
-	}
 }

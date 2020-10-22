@@ -84,7 +84,7 @@ void Engine::update(float dtAsSeconds)
 		if (!movementObstaculized) {
 			m_Piece.moveDown();
 		}
-		else {
+		else if (!linesBeingCleared) {
 			std::array<Chip, 4> chips = m_Piece.getChips();
 			for (int i = 0; i < 4; i++) {
 				m_Board.fillSquare(chips[i].getBoardPosition().x, chips[i].getBoardPosition().y);
@@ -127,6 +127,13 @@ void Engine::update(float dtAsSeconds)
 					level++;
 				}
 			}
+			chips = m_Piece.getChips();
+			for (int i = 0; i < 4; i++) {
+				if (m_Board.isFilledSquare(chips[i].getBoardPosition().x, chips[i].getBoardPosition().y)) {
+
+					gameIsOver = true;
+				}
+			}
 		}
 
 
@@ -138,7 +145,7 @@ void Engine::update(float dtAsSeconds)
 	pieceCounter += dtAsSeconds;
 
 	if (linesBeingCleared) {
-		if (lineCounter < 0.5) {
+		if (lineCounter < 0.25) {
 			lineCounter += dtAsSeconds;
 		}
 		else {
