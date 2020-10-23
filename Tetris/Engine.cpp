@@ -69,6 +69,14 @@ Engine::Engine()
 	ssGameOver << "Game Over";
 	hudGameOver.setString(ssGameOver.str());
 
+	hudPressEnter.setPosition(100, 530);
+	hudPressEnter.setFont(font);
+	hudPressEnter.setCharacterSize(50);
+	hudPressEnter.setFillColor(sf::Color::White);
+	std::stringstream ssPressEnter;
+	ssPressEnter << "Press Enter to try again";
+	hudPressEnter.setString(ssPressEnter.str());
+
 
 }
 

@@ -42,6 +42,8 @@ void Engine::gameOverState()
 
 		m_Window.draw(hudGameOver);
 
+		m_Window.draw(hudPressEnter);
+
 		// Show everything we have just drawn
 		m_Window.display();
 

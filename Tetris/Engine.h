@@ -54,6 +54,7 @@ private:
 
 	sf::Text hud;
 	sf::Text hudGameOver;
+	sf::Text hudPressEnter;
 
 	sf::Font font;
 

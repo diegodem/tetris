@@ -123,7 +123,7 @@ void Engine::update(float dtAsSeconds)
 				ss << "Score\n" << std::setfill('0') << std::setw(5) << score;
 				hud.setString(ss.str());
 				if (untilNextLevel <= 0) {
-					pieceFreq = pieceFreq * 0.6;
+					pieceFreq = pieceFreq * 0.65;
 					untilNextLevel += 10;
 					level++;
 				}
