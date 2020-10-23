@@ -28,7 +28,12 @@ void Engine::input()
 			}else if (event.key.code == sf::Keyboard::Left)
 			{
 				leftPressed = true;
-			}else if (event.key.code == sf::Keyboard::Space)
+			}
+			else if (event.key.code == sf::Keyboard::Up)
+			{
+				upPressed = true;
+			}
+			else if (event.key.code == sf::Keyboard::Space)
 			{
 				spacePressed = true;
 			}

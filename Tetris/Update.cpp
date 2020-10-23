@@ -69,7 +69,7 @@ void Engine::update(float dtAsSeconds)
 		}
 
 	}
-	if (downPressed || pieceCounter > pieceFreq) {
+	if (upPressed || downPressed || pieceCounter > pieceFreq) {
 		bool movementObstaculized = false;
 		std::array<Chip, 4> chips = m_Piece.getChips();
 		for (int i = 0; i < 4; i++) {
@@ -85,6 +85,7 @@ void Engine::update(float dtAsSeconds)
 			m_Piece.moveDown();
 		}
 		else if (!linesBeingCleared) {
+			upPressed = false;
 			std::array<Chip, 4> chips = m_Piece.getChips();
 			for (int i = 0; i < 4; i++) {
 				m_Board.fillSquare(chips[i].getBoardPosition().x, chips[i].getBoardPosition().y);

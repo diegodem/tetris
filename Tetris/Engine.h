@@ -38,6 +38,7 @@ private:
 	bool rightPressed;
 	bool downPressed;
 	bool spacePressed;
+	bool upPressed;
 
 	bool linesBeingCleared;
 	float lineCounter;
