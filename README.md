@@ -6,3 +6,5 @@ Controls:
 - Right/Left/Down arrows: Move piece
 - Up arrow: Move piece all the way down
 - Space: Rotate piece
+
+Gameplay video: https://youtu.be/dTpQPaEAn90
