@@ -1,6 +1,6 @@
 # Tetris
 
-Work-in-progress implementation of the classic Tetris game in C++ with SFML.
+Implementation of the classic Tetris game in C++ with SFML.
 
 Controls:
 - Right/Left/Down arrows: Move piece
